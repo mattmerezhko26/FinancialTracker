@@ -1,7 +1,7 @@
 import type { FinancialRecord } from '../../contexts/financial-record-context';
 import { useTable } from 'react-table';
 import { useFinancialRecords } from '../../contexts/financial-record-context';
-import type { Column, CellProps, Row } from 'react-table';
+import type { Column, CellProps } from 'react-table';
 import { useMemo } from 'react';
 import { useState } from 'react';
 
@@ -93,7 +93,7 @@ export const FinancialRecordList = () => {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map((row, idx) => {
+          {rows.map((row) => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
